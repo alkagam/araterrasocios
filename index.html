@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TerraSocios - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="/archivos terrasocios web/logo terrasocios.png" alt="TerraSocios" class="navbar__logo"/>
+            <div class="nav-links">
+                <a href="#proceso">Proceso</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#territorio">Territorio APA</a>
+                <button class="contact-btn">Contáctanos</button>
+                <img src="/archivos terrasocios web/redes logo_Mesa de trabajo 1 copia.png" alt="TerraSocios" class="navbar__logo"/>
+            
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+
+      <section class="min-h-screen relative">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3');">
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 py-32">
+            <div class="pt-16">
+                <!-- White Card -->
+                <div class="bg-white rounded-lg shadow-lg p-8 w-96">
+                    <h1 class="text-4xl font-bold mb-6">
+                        INICIA TU PROCESO AQUÍ
+                    </h1>
+                    <a href="pasos.html" class="block w-full bg-[#8B9D3C] text-white font-bold py-4 px-8 rounded-md text-xl text-center hover:bg-[#7A8A35] transition-colors">
+                        ¡Haz que tu terreno trabaje para ti!
+                    </a>
+                </div>
+                <div class="absolute bottom-32 right-32 text-white">
+                    <div class="flex items-baseline gap-2 text-5xl font-bold">
+                        <h2>Aporta tu terreno</h2>
+                        <span class="text-4xl font-normal">y</span>
+                    </div>
+                    <div class="text-4xl">
+                        <p>juntos creamos</p>
+                        <p class="text-5xl font-bold mt-2">ganancias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>x|
+
+        <!-- Proceso Section -->
+        <section id="proceso" class="proceso-section">
+            <h2>PROCESO</h2>
+            <div class="proceso-content">
+                <div class="proceso-text">
+                    <p>El proceso inicia llenando la información del formulario y te contactaremos.</p>
+                    <button onclick="iniciarProceso()">QUIERO UNIRME A TERRASOCIOS</button>
+                </div>
+                <div class="proceso-image"></div>
+            </div>
+        </section>
+
+        <!-- Beneficios Section -->
+        <section id="beneficios" class="beneficios-section">
+            <h2>BENEFICIOS</h2>
+            <p class="beneficios-intro">TerraSocios y el propietario <strong>comparten las ganancias</strong>, creando un negocio rentable y sostenible.</p>
+           
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon1 rentabilidad"></div>
+                    <h3>Rentabilidad garantizada</h3>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon2 diversificacion"></div>
+                    <h3>Diversificación de ingresos</h3>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon3 crecimiento"></div>
+                    <h3>Crecimiento y éxito</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Territorio Section -->
+        <section id="territorio" class="territorio-section">
+            <h2>TERRITORIO ARA</h2>
+            <div class="estadisticas-grid">
+                <div class="estadistica">
+                    <div class="numero">15</div>
+                    <div class="label">Estados</div>
+                </div>
+                <div class="estadistica">
+                    <div class="numero">21</div>
+                    <div class="label">Ciudades</div>
+                </div>
+                <div class="estadistica">
+                    <div class="numero">31</div>
+                    <div class="label">Municipios</div>
+                </div>
+                <div class="estadistica">
+                    <div class="numero">41</div>
+                    <div class="label">Desarrollos</div>
+                </div>
+            </div>
+            <div class="mapa-container"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Avisos de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Escríbenos a terrasocios@ara.com.mx</li>
+                        <li>Tel.: 00 0000 0000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img src="/archivos terrasocios web/redes logo_Mesa de trabajo 1 copia.png" alt="ARA Logo" class="footer-logo">
+                <div class="social-links">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#">@TerraSocios</a>
+                        <a href="#">@terrasocios</a>
+                        <a href="#">@terrasocios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.4 3.6C18.2 1.4 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.8 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.4-6.2-3.6-8.4zM12 22c-1.8 0-3.6-.5-5.2-1.4l-.4-.2-3.8 1 1-3.8-.2-.4C2.5 15.6 2 13.8 2 12 2 6.5 6.5 2 12 2c2.6 0 5 1 6.8 2.8C20.6 6.6 21.6 9 21.6 12c0 5.5-4.5 10-9.6 10z"/>
+        </svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraSocios</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media-queries.css">
+  <link rel="stylesheet" href="css/paso1.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html">  <img src="/archivos terrasocios web/logo terrasocios.png" alt="TerraSocios" class="navbar__logo"/></a> 
+      <div class="nav-links">
+            <a href="#proceso">Proceso</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#territorio">Territorio APA</a>
+            <button class="contact-btn">Contáctanos</button>
+            <img src="/archivos terrasocios web/redes logo_Mesa de trabajo 1 copia.png" alt="TerraSocios" class="navbar__logo"/>
+        
+        </div>
+    </div>
+</nav>  
+  <!-- Step 1: Contact Information -->
+  <div id="step-1" class="min-h-screen flex flex-col items-center justify-center bg-step-1">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-96">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">PASO 1</h2>
+      <p class="text-gray-600 mb-4">Información de contacto</p>
+      <form id="form-step-1" class="space-y-4">
+        <input type="text" id="name" placeholder="Nombre" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <input type="email" id="email" placeholder="Correo" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <input type="tel" id="phone" placeholder="Teléfono" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <button type="button" id="next-to-step-2" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">CONTINUAR</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Step 2: Terrain Information -->
+  <div id="step-2" class="min-h-screen flex flex-col items-center justify-center bg-step-2 hidden">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-96">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">PASO 2</h2>
+      <p class="text-gray-600 mb-4">Información del terreno</p>
+      <form id="form-step-2" class="space-y-4">
+        <input type="text" id="address" placeholder="Dirección del terreno" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <input type="text" id="size" placeholder="Tamaño del terreno" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <input type="text" id="estimated-price" placeholder="Precio estimulado" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-200" required>
+        <button type="button" id="next-to-step-3" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">CONTINUAR</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Step 3: Summary -->
+  <div id="step-3" class="min-h-screen flex flex-col items-center justify-center bg-step-3 hidden">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-96">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Estás a un paso de ser TerraSocio</h2>
+      <div id="summary" class="text-gray-600 space-y-2 mb-4">
+        <!-- Summary will be dynamically generated -->
+      </div>
+      <button type="button" id="submit" class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600">ENVIAR</button>
+    </div>
+  </div>
+
+  <!-- Congratulations Page -->
+  <div id="congratulations" class="min-h-screen flex flex-col items-center justify-center bg-step-4 hidden">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-96 text-center">
+      <h2 class="text-3xl font-semibold text-green-600 mb-6">¡Felicidades!</h2>
+      <p class="text-gray-600 mb-4">Te has convertido en un TerraSocio con éxito.</p>
+      <img src="/si.png" alt="Felicidades" class="mb-4 rounded-md shadow-md">
+      <p class="text-gray-600">Gracias por confiar en nosotros. Pronto nos pondremos en contacto contigo.</p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to manage steps
+    const step1 = document.getElementById('step-1');
+    const step2 = document.getElementById('step-2');
+    const step3 = document.getElementById('step-3');
+    const congratulations = document.getElementById('congratulations');
+
+    const nextToStep2 = document.getElementById('next-to-step-2');
+    const nextToStep3 = document.getElementById('next-to-step-3');
+    const submit = document.getElementById('submit');
+
+    nextToStep2.addEventListener('click', () => {
+      step1.classList.add('hidden');
+      step2.classList.remove('hidden');
+    });
+
+    nextToStep3.addEventListener('click', () => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const size = document.getElementById('size').value;
+      const estimatedPrice = document.getElementById('estimated-price').value;
+
+      document.getElementById('summary').innerHTML = `
+        <p><strong>Nombre:</strong> ${name}</p>
+        <p><strong>Correo:</strong> ${email}</p>
+        <p><strong>Teléfono:</strong> ${phone}</p>
+        <p><strong>Dirección del terreno:</strong> ${address}</p>
+        <p><strong>Tamaño del terreno:</strong> ${size}</p>
+        <p><strong>Precio estimulado:</strong> ${estimatedPrice}</p>
+      `;
+
+      step2.classList.add('hidden');
+      step3.classList.remove('hidden');
+    });
+
+    submit.addEventListener('click', () => {
+      step3.classList.add('hidden');
+      congratulations.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
